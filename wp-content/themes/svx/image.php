@@ -1,9 +1,7 @@
 <?php
 /**
- * The template for displaying image attachments.
- *
- * @package SVX
- * @since SVX 1.0
+ * @package WordPress
+ * @subpackage Toolbox
  */
 
 get_header(); ?>
@@ -13,12 +11,6 @@ get_header(); ?>
 
 			<?php the_post(); ?>
 
-			<nav id="nav-single">
-				<h3 class="assistive-text"><?php _e( 'Image navigation', 'twentyeleven' ); ?></h3>
-				<span class="nav-previous"><?php previous_image_link( false, __( '&larr; Previous' , 'twentyeleven' ) ); ?></span>
-				<span class="nav-next"><?php next_image_link( false, __( 'Next &rarr;' , 'twentyeleven' ) ); ?></span>
-			</nav><!-- #nav-single -->
-
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<header class="entry-header">
 						<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -26,19 +18,23 @@ get_header(); ?>
 						<div class="entry-meta">
 							<?php
 								$metadata = wp_get_attachment_metadata();
-								printf( __( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a>', 'twentyeleven' ),
+								printf( __( '<span class="meta-prep meta-prep-entry-date">Published </span> <span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span>  at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a>', 'toolbox' ),
 									esc_attr( get_the_time() ),
 									get_the_date(),
-									esc_url( wp_get_attachment_url() ),
+									wp_get_attachment_url(),
 									$metadata['width'],
 									$metadata['height'],
-									esc_url( get_permalink( $post->post_parent ) ),
+									get_permalink( $post->post_parent ),
 									get_the_title( $post->post_parent )
 								);
 							?>
-							<?php edit_post_link( __( 'Edit', 'twentyeleven' ), '<span class="edit-link">', '</span>' ); ?>
+							<?php edit_post_link( __( 'Edit', 'toolbox' ), '<span class="sep">|</span> <span class="edit-link">', '</span>' ); ?>
 						</div><!-- .entry-meta -->
 
+						<nav id="image-navigation">
+							<span class="previous-image"><?php previous_image_link( false, __( '&larr; Previous' , 'toolbox' ) ); ?></span>
+							<span class="next-image"><?php next_image_link( false, __( 'Next &rarr;' , 'toolbox' ) ); ?></span>
+						</nav><!-- #image-navigation -->
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
@@ -69,27 +65,36 @@ get_header(); ?>
 		$next_attachment_url = wp_get_attachment_url();
 	}
 ?>
-								<a href="<?php echo esc_url( $next_attachment_url ); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
-								$attachment_size = apply_filters( 'twentyeleven_attachment_size', 848 );
-								echo wp_get_attachment_image( $post->ID, array( $attachment_size, 1024 ) ); // filterable image width with 1024px limit for image height.
+								<a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
+								$attachment_size = apply_filters( 'theme_attachment_size',  800 );
+								echo wp_get_attachment_image( $post->ID, array( $attachment_size, 9999 ) ); // filterable image width with, essentially, no limit for image height.
 								?></a>
-
-								<?php if ( ! empty( $post->post_excerpt ) ) : ?>
-								<div class="entry-caption">
-									<?php the_excerpt(); ?>
-								</div>
-								<?php endif; ?>
 							</div><!-- .attachment -->
 
+							<?php if ( ! empty( $post->post_excerpt ) ) : ?>
+							<div class="entry-caption">
+								<?php the_excerpt(); ?>
+							</div>
+							<?php endif; ?>
 						</div><!-- .entry-attachment -->
 
-						<div class="entry-description">
-							<?php the_content(); ?>
-							<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'twentyeleven' ) . '</span>', 'after' => '</div>' ) ); ?>
-						</div><!-- .entry-description -->
+						<?php the_content(); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'toolbox' ), 'after' => '</div>' ) ); ?>
 
 					</div><!-- .entry-content -->
 
+					<div class="entry-utility">
+						<?php if ( comments_open() && pings_open() ) : // Comments and trackbacks open ?>
+							<?php printf( __( '<a class="comment-link" href="#respond" title="Post a comment">Post a comment</a> or leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'toolbox' ), get_trackback_url() ); ?>
+						<?php elseif ( ! comments_open() && pings_open() ) : // Only trackbacks open ?>
+							<?php printf( __( 'Comments are closed, but you can leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'toolbox' ), get_trackback_url() ); ?>
+						<?php elseif ( comments_open() && ! pings_open() ) : // Only comments open ?>
+							<?php _e( 'Trackbacks are closed, but you can <a class="comment-link" href="#respond" title="Post a comment">post a comment</a>.', 'toolbox' ); ?>
+						<?php elseif ( ! comments_open() && ! pings_open() ) : // Comments and trackbacks closed ?>
+							<?php _e( 'Both comments and trackbacks are currently closed.', 'toolbox' ); ?>
+						<?php endif; ?>
+						<?php edit_post_link( __( 'Edit', 'toolbox' ), ' <span class="edit-link">', '</span>' ); ?>
+					</div><!-- .entry-utility -->
 				</article><!-- #post-<?php the_ID(); ?> -->
 
 				<?php comments_template(); ?>
