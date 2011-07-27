@@ -15,21 +15,7 @@ get_header(); ?>
 				
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-					
-					<div class="content_box blog_content">
-            <div class="content_box_top">
-              <div></div>
-            </div>
-            <div class="content_box_inner">
-              <div class="content_box_content">
-                <?php get_template_part( 'content', get_post_format() ); ?>
-              </div>
-            </div>
-            <div class="content_box_bottom">
-              <div></div>
-            </div>
-        </div>
-
+          <?php get_template_part( 'content', get_post_format() ); ?>
 				<?php endwhile; ?>
 				
 				<?php /* Display navigation to next/previous pages when applicable */ ?>

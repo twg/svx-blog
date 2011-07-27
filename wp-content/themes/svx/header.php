@@ -42,7 +42,7 @@
 <div class='container'>
   <div class='body_header'>
     <div class='wrapper'>
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" alt="Social Venture Exchange" class="logo"></a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" class="logo"></a>
       <ul class='account_nav'>
         <li class='about'>
           <a href="http://svx.twg.ca/about">About</a>

@@ -173,9 +173,6 @@ License URI: license.txt
 .single #content #nav-above {
 	display: block;
 }
-#nav-below {
-	margin: 1em 0 0;
-}
 .page-link {
 	margin: 0 0 1em;
 }
@@ -440,9 +437,6 @@ h3 {
   color: #3c3c3b;
   font: bold 17px/28px Arial, sans-serif;
   text-transform: none; }
-  h3 span {
-    font: 12px/18px Arial, sans-serif;
-    float: right; }
 
 h3 em {
   font-style: italic; }
@@ -685,6 +679,37 @@ body {
         line-height: 59px; }
 
 
+#nav-above {
+  float: right; 
+  width: 500px;
+  padding: 10px 0;
+  font-size: 12px; }
+  #nav-above a {
+    text-decoration: underline; }
+  #nav-above .nav-next {
+    margin-left: 20px;
+    float: right; }
+  #nav-above .nav-previous {
+    margin-left: 20px;
+    float: right; }
+  #nav-above .nav-home {
+    float: left; }
+    
+#nav-below {
+  margin-bottom: 20px;
+  font-size: 12px; 
+  overflow: hidden; }
+  #nav-below .nav-next {
+    float: right;  }
+  #nav-below .nav-previous {
+  float: left;  }
+
+.page-header {
+  margin: 0 10px; }
+
+h3.author span {
+  float: none; 
+  font-size: 15px}
 
 .entry-title {
   margin-bottom: 0; }
@@ -695,7 +720,7 @@ body {
   margin: 0px; }
 
 .entry-meta {
-  margin-top: 10px; }
+  margin: 10px 0; }
   .entry-meta .cat-links span {
     margin-right: 10px;  }
   .entry-meta .tag-links {
@@ -705,7 +730,7 @@ body {
   padding: 0;
   float: right;
   width: 320px; 
-  margin-top: 65px; }
+  margin-top: 45px; }
 
 h1.widget-title {
   margin: 20px 0;
@@ -761,7 +786,7 @@ h1.widget-title {
           float: right;
           width: 295px; }
         .content_box .content_box_inner .content_box_content .box_content .single_column {
-          padding: 30px; }
+          padding: 20px 30px; }
           .content_box .content_box_inner .content_box_content .box_content .single_column iframe {
             margin: 10px 0 20px 0; }
   .content_box .content_box_bottom {
