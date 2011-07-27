@@ -3,7 +3,6 @@
  * @package SVX
  */
 ?>
-  </div>
 	</div><!-- #main -->
 
   <div class='footer'>

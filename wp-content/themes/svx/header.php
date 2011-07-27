@@ -66,4 +66,3 @@
   <div class='main_area'>
     <div class='wrapper'>
       <div class='flash_wrapper'></div>
-      <div class='main_content'>

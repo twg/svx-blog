@@ -148,6 +148,10 @@ License URI: license.txt
 .entry-meta {
 	clear: both;
 	display: block;
+	font-size: 11px;
+}
+.entry-meta .sep {
+  margin: 0 10px;
 }
 #content nav {
 	display: block;
@@ -424,13 +428,13 @@ a:hover {
   text-decoration: underline; }
 
 h1 {
-  color: #1d1d1b;
-  font: bold 24px/24px Arial, sans-serif;
-  margin: 0 0 25px 0; }
+  color: #3C3C3B;
+  font: bold 36px/43px Arial, sans-serif;
+  margin: 0 0 15px 0; }
 
 h2 {
-  color: #1d1d1b;
-  font: 21px/30px Arial, sans-serif; }
+  color: #3C3C3B;
+  font: bold 24px/36px Arial, sans-serif; }
 
 h3 {
   color: #3c3c3b;
@@ -582,75 +586,22 @@ body {
             display: block; }
           body .body_header .wrapper ul.account_nav li a:hover {
             text-decoration: underline; }
-          body .body_header .wrapper ul.account_nav li a.active {
-            background-color: #f6f6f6; }
-          body .body_header .wrapper ul.account_nav li ul.user_dropdown {
-            position: absolute;
-            background: #f6f6f6;
-            padding: 0 0 10px 0;
-            width: 150px;
-            top: 0px;
-            left: 0px;
-            -webkit-border-bottom-right-radius: 10px;
-            -webkit-border-bottom-left-radius: 10px;
-            -moz-border-radius-bottomright: 10px;
-            -moz-border-radius-bottomleft: 10px;
-            border-bottom-right-radius: 10px;
-            border-bottom-left-radius: 10px;
-            -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-            -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); }
-            body .body_header .wrapper ul.account_nav li ul.user_dropdown li.account_menu_top {
-              padding: 0;
-              margin: 0;
-              text-align: center;
-              height: 49px;
-              line-height: 15px;
-              border: none;
-              font-size: 12px;
-              position: relative; }
-            body .body_header .wrapper ul.account_nav li ul.user_dropdown li {
-              border: none;
-              border-top: 1px solid #e6e6e6;
-              height: 35px;
-              display: block;
-              float: none;
-              padding: 0;
-              margin: 0 10px; }
-              body .body_header .wrapper ul.account_nav li ul.user_dropdown li a {
-                padding: 10px 5px;
-                text-align: left; }
-  body .home_top_area {
-    overflow: hidden;
-    background: #f6f6f6 url(images/header-shadow-home.png) top left repeat-x; }
-    body .home_top_area .divider {
-      background: #f6f6f6 url(images/homepage/wide_divider.png) top left no-repeat;
-      height: 22px; }
-    body .home_top_area .wrapper-top {
-      margin: 35px auto 30px auto;
-      width: 940px;
-      overflow: visible;
-      padding: 0px 14px;
-      background: transparent url(images/homepage/home_main_bg_image.jpg) top right no-repeat; }
-  body .main_area.home {
-    background: #efeee2 url(images/homepage/home_main_area_bg.png) top left repeat-x; }
-    body .main_area.home .wrapper {
-      padding-top: 10px; }
+
   body .main_area {
     background: #efeee2 url(images/header-shadow.png) top left repeat-x; }
     body .main_area .wrapper {
       margin: auto;
       width: 980px;
-      padding: 20px 0 60px 0; }
+      padding: 20px 0 60px 0; 
+      overflow: hidden; }
       body .main_area .wrapper .main_content {
-        overflow: hidden;
-        margin: 0; }
-      body .main_area .wrapper h1 {
-        margin-left: 5px; }
+        margin: 0; 
+        width: 610px; 
+        float: left; }
       body .main_area .wrapper .main_nav {
         overflow: hidden;
         margin: 0 10px; }
-        body .main_area .wrapper .main_nav h1 {
+        body .main_area .wrapper .main_nav h2 {
           float: left;
           margin: 3px 0 15px 0; }
         body .main_area .wrapper .main_nav ul.main_nav {
@@ -679,107 +630,10 @@ body {
                 padding: 0px 20px 0px 0px; }
       body .main_area .wrapper .main_nav.search_nav {
         width: 670px; }
-      body .main_area .wrapper table.search {
-        border: none;
-        margin: 0; }
-        body .main_area .wrapper table.search tr.header {
-          height: 55px;
-          background: #e7e3e1 url(images/searchpage/table_header_bg.png) bottom right repeat-x; }
-          body .main_area .wrapper table.search tr.header th {
-            line-height: 22px;
-            border: none; }
-            body .main_area .wrapper table.search tr.header th a {
-              text-transform: uppercase;
-              letter-spacing: 1px;
-              font: 10px/14px Arial, sans-serif;
-              color: #868686;
-              text-decoration: none; }
-            body .main_area .wrapper table.search tr.header th a:hover {
-              text-decoration: underline; }
-            body .main_area .wrapper table.search tr.header th a.sort_link.asc, body .main_area .wrapper table.search tr.header th a.sort_link.desc {
-              float: left;
-              text-decoration: none;
-              line-height: 37px;
-              overflow: visible;
-              display: block;
-              padding-left: 16px;
-              background: transparent url(images/searchpage/sort_btn.png) no-repeat left bottom; }
-              body .main_area .wrapper table.search tr.header th a.sort_link.asc span, body .main_area .wrapper table.search tr.header th a.sort_link.desc span {
-                display: block;
-                line-height: 20px;
-                padding: 4px 15px 8px 0;
-                background: transparent url(images/searchpage/sort_btn.png) no-repeat right top; }
-        body .main_area .wrapper table.search .name_investment .left {
-          float: left; }
-        body .main_area .wrapper table.search .name_investment .right {
-          text-align: right;
-          float: right; }
-        body .main_area .wrapper table.search .capital, body .main_area .wrapper table.search .sector {
-          text-align: center; }
-        body .main_area .wrapper table.search th.name_investment {
-          width: 400px; }
-          body .main_area .wrapper table.search th.name_investment .left {
-            width: 150px;
-            padding-left: 4px;
-            line-height: 32px; }
-            body .main_area .wrapper table.search th.name_investment .left a.sort_link {
-              padding-left: 5px; }
-          body .main_area .wrapper table.search th.name_investment .right {
-            width: 182px;
-            line-height: 32px; }
-        body .main_area .wrapper table.search th.capital {
-          width: 136px;
-          padding: 0 4px; }
-        body .main_area .wrapper table.search th.sector {
-          width: 95px; }
-        body .main_area .wrapper table.search td {
-          border-bottom: none;
-          padding: 17px 10px 0px; }
-        body .main_area .wrapper table.search td.capital, body .main_area .wrapper table.search td.sector {
-          padding-top: 30px; }
-        body .main_area .wrapper table.search td.name_investment {
-          padding-top: 0px; }
-          body .main_area .wrapper table.search td.name_investment .left {
-            padding-top: 15px;
-            width: 285px; }
-            body .main_area .wrapper table.search td.name_investment .left .profile_photo {
-              margin-left: 0px; }
-            body .main_area .wrapper table.search td.name_investment .left .text {
-              padding-top: 8px; }
-              body .main_area .wrapper table.search td.name_investment .left .text a {
-                font: 18px Arial, sans-serif;
-                color: #3c3c3b; }
-          body .main_area .wrapper table.search td.name_investment .right {
-            padding-top: 30px;
-            width: 100px; }
-        body .main_area .wrapper table.search .divider_l, body .main_area .wrapper table.search .divider_r {
-          padding: 0;
-          width: 3px; }
-        body .main_area .wrapper table.search th.divider_l {
-          background: url(images/searchpage/header_cell_divider.png) center right no-repeat; }
-        body .main_area .wrapper table.search th.divider_r {
-          background: url(images/searchpage/header_cell_divider.png) center right no-repeat; }
-        body .main_area .wrapper table.search tr {
-          color: #6f6f6e;
-          border-bottom: none;
-          height: 40px; }
-          body .main_area .wrapper table.search tr td.divider_l {
-            background: url(images/searchpage/cell_divider.png) center right repeat-y; }
-          body .main_area .wrapper table.search tr td.divider_r {
-            background: url(images/searchpage/cell_divider.png) center right repeat-y; }
-        body .main_area .wrapper table.search tr.divider {
-          color: #6f6f6e;
-          height: 23px;
-          background: url(images/searchpage/row_bg.png) bottom right repeat-x; }
-          body .main_area .wrapper table.search tr.divider td {
-            padding: 0px; }
-          body .main_area .wrapper table.search tr.divider td.divider_l {
-            background: url(images/searchpage/row_divider_bg.png) bottom right no-repeat; }
-          body .main_area .wrapper table.search tr.divider td.divider_r {
-            background: url(images/searchpage/row_divider_bg.png) bottom right no-repeat; }
       body .main_area .wrapper .pagination_links {
         height: 50px;
         background: #e7e3e1; }
+
   body .footer {
     padding: 10px 40px;
     background: white url(images/footer-top-gradient.png) top right repeat-x; }
@@ -832,9 +686,51 @@ body {
 
 
 
+.entry-title {
+  margin-bottom: 0; }
+.entry-content {
+  margin-top: 10px; }
+
+.box_header .entry-meta {
+  margin: 0px; }
+
+.entry-meta {
+  margin-top: 10px; }
+  .entry-meta .cat-links span {
+    margin-right: 10px;  }
+  .entry-meta .tag-links {
+    margin: 0 10px 0 20px  }
+
+.sidebar {
+  padding: 0;
+  float: right;
+  width: 320px; 
+  margin-top: 65px; }
+
+h1.widget-title {
+  margin: 20px 0;
+  color: #3C3C3B;
+  font: bold 18px/22px Arial, sans-serif; }
+
+.widget_twitter {
+  width: 200px; }
+  .widget_twitter .twitterwidget-title {
+    display: none; }
+  .twitter-link {
+    display: block;
+    background: url("images/blue_divider.png") no-repeat scroll left bottom transparent;
+    height: 35px;  }
+  .widget_twitter ul li span {
+    display: block; }
+    .widget_twitter ul li {
+      margin-bottom: 20px; }
+    .widget_twitter ul li .entry-meta {
+      display: none; }
+  
+  
 .content_box {
   background: white url(images/content_box_inner_left.gif) left repeat-y;
-  margin: 0 1px; }
+  margin: 0 1px 20px 1px; }
   .content_box .content_box_top {
     background: url(images/content_box_top.gif) right; }
     .content_box .content_box_top div {
@@ -848,7 +744,7 @@ body {
       }
       .content_box .content_box_inner .content_box_content .box_header {
         background: url(images/content-header-border.gif) bottom left repeat-x;
-        padding: 10px 0px 15px 35px;
+        padding: 15px 0px 15px 30px;
         margin: 0;
         overflow: hidden; }
       .content_box .content_box_inner .content_box_content .box_content {
@@ -865,7 +761,7 @@ body {
           float: right;
           width: 295px; }
         .content_box .content_box_inner .content_box_content .box_content .single_column {
-          padding: 30px 40px 30px 40px; }
+          padding: 30px; }
           .content_box .content_box_inner .content_box_content .box_content .single_column iframe {
             margin: 10px 0 20px 0; }
   .content_box .content_box_bottom {
@@ -874,13 +770,13 @@ body {
       height: 9px;
       background: url(images/content_box_bottom_corner.gif) no-repeat; }
 
-a.button {
+a.button,a.more-link {
   height: 38px;
   display: inline-block;
   background: url(images/buttons/blue-right.png) right;
   margin-left: 5px;
   color: white; }
-  a.button span {
+  a.button span,a.more-link span {
     display: block;
     height: 38px;
     background: url(images/buttons/blue-left.png) left no-repeat;
@@ -888,10 +784,10 @@ a.button {
     font: bold 14px/34px Arial, sans-serif;
     padding: 0px 45px 0px 20px; }
 
-a.button:hover {
+a.button:hover,a.more-link:hover {
   text-decoration: none;
   background: url(images/buttons/blue-hover-right.png) right; }
-  a.button:hover span {
+  a.button:hover span,a.more-link:hover span {
     background: url(images/buttons/blue-hover-left.png) left no-repeat; }
 
 a.button.green {
@@ -907,17 +803,22 @@ a.button.green:hover {
 a.button.no-arrow {
   background: url(images/button_bg.png) right; }
   a.button.no-arrow span {
-    padding: 0px 20px; }
-
-.pagination {
-  margin-bottom: 20px;
-  overflow: hidden; }
-  .pagination span, .pagination em, .pagination a {
+    padding: 0px 15px; }
+.wp-pagenavi .pages {
+  display: none; }
+.wp-pagenavi {
+  overflow: hidden; 
+  float: right;
+  margin: 10px 20px 0 0; 
+  font: 11px/18px Arial, sans-serif; }
+  .wp-pagenavi a, .wp-pagenavi span {
     float: left;
     padding: 2px 8px;
-    margin-right: 5px;
+    margin-right: 25px;
     color: #999999; }
-  .pagination em {
+  .wp-pagenavi a.previouspostslink, .wp-pagenavi a.nextpostslink  {
+    margin-right: 5px; }
+  .wp-pagenavi span {
     background-color: #35b4e3;
     color: white;
     font-style: normal; }
