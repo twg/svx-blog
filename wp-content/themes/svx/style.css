@@ -751,10 +751,40 @@ h1.widget-title {
       margin-bottom: 20px; }
     .widget_twitter ul li .entry-meta {
       display: none; }
+
+h2#comments-title {
+  margin-bottom: 20px; }
+
+.comment-author cite {
+  margin-left: 20px;
+  font: bold 18px/32px Arial, sans-serif;  }
+.comment-meta a {
+  font-size: 12px;}
+.comment-meta {
+  float: left;
+  margin-left: 20px}
+.profile_image {
+  background: url("images/profile_photo_bg.png") repeat scroll 0 0 transparent;
+  float: left;
+  height: 50px;
+  padding: 6px 7px;
+  width: 450x; }
+footer .reply {
+  float: right; }
+  .comment-reply-link {
+    margin-right: 20px;
+    font: bold 15px/32px Arial, sans-serif;  }
   
+.content_box_content #respond {
+  padding: 30px; }
+
+#respond { 
+  padding: 40px; }
+ul.children li ul.children {
+  margin-left: 20px; }
   
 .content_box {
-  background: white url(images/content_box_inner_left.gif) left repeat-y;
+  background: #f3f2ee url(images/content_box_inner_left.gif) left repeat-y;
   margin: 0 1px 20px 1px; }
   .content_box .content_box_top {
     background: url(images/content_box_top.gif) right; }
@@ -764,11 +794,11 @@ h1.widget-title {
   .content_box .content_box_inner {
     margin-left: 9px;
     padding-right: 9px;
-    background: white url(images/content_box_inner_right.gif) right repeat-y; }
+    background: url(images/content_box_inner_right.gif) right repeat-y; }
     .content_box .content_box_inner .content_box_content {
       }
       .content_box .content_box_inner .content_box_content .box_header {
-        background: url(images/content-header-border.gif) bottom left repeat-x;
+        background: #FFF url(images/content-header-border.gif) bottom left repeat-x;
         padding: 15px 0px 15px 30px;
         margin: 0;
         overflow: hidden; }

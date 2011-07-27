@@ -21,35 +21,54 @@ function toolbox_comment( $comment, $args, $depth ) {
 		case '' :
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<footer>
-				<div class="comment-author vcard">
-					<?php echo get_avatar( $comment, 40 ); ?>
-					<?php printf( __( '%s <span class="says">says:</span>', 'toolbox' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
-				</div><!-- .comment-author .vcard -->
-				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em><?php _e( 'Your comment is awaiting moderation.', 'toolbox' ); ?></em>
-					<br />
-				<?php endif; ?>
+	  <div class="content_box blog_content">
+      <div class="content_box_top">
+        <div></div>
+      </div>
+      <div class="content_box_inner">
+        <div class="content_box_content">
+      		<article id="comment-<?php comment_ID(); ?>" class="comment">
+      		  <div class="box_header">
+        			<footer>
+        			  <div class="reply">
+          				<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+          			</div><!-- .reply -->
+        				<div class="comment-author vcard">
+        				  <div class="profile_image">
+          					<?php echo get_avatar( $comment, 46 ); ?>
+        					</div>
+        					<?php printf( __( '%s', 'toolbox' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+        				</div><!-- .comment-author .vcard -->
+        				<?php if ( $comment->comment_approved == '0' ) : ?>
+        					<em><?php _e( 'Your comment is awaiting moderation.', 'toolbox' ); ?></em>
+        					<br />
+        				<?php endif; ?>
 
-				<div class="comment-meta commentmetadata">
-					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
-					<?php
-						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', 'toolbox' ), get_comment_date(),  get_comment_time() ); ?>
-					</time></a>
-					<?php edit_comment_link( __( '(Edit)', 'toolbox' ), ' ' );
-					?>
-				</div><!-- .comment-meta .commentmetadata -->
-			</footer>
-
-			<div class="comment-content"><?php comment_text(); ?></div>
-
-			<div class="reply">
-				<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-			</div><!-- .reply -->
-		</article><!-- #comment-##  -->
-
+        				<div class="comment-meta commentmetadata">
+        					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
+        					<?php
+        						/* translators: 1: date, 2: time */
+        						printf( __( '%1$s at %2$s', 'toolbox' ), get_comment_date(),  get_comment_time() ); ?>
+        					</time></a>
+        					<?php edit_comment_link( __( '(Edit)', 'toolbox' ), ' ' );
+        					?>
+        				</div><!-- .comment-meta .commentmetadata -->
+        				
+        			</footer>
+        		</div>
+            <div class="box_content">
+              <div class='single_column'>
+      			    <div class="comment-content"><?php comment_text(); ?></div>
+      			  </div>
+      			</div>
+      			
+      		</article><!-- #comment-##  -->
+          </div>
+        </div>
+        <div class="content_box_bottom">
+          <div></div>
+        </div>
+    </div>
 	<?php
 			break;
 		case 'pingback'  :
@@ -78,7 +97,7 @@ endif; // ends check for toolbox_comment()
 	<?php if ( have_comments() ) : ?>
 		<h2 id="comments-title">
 			<?php
-			    printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'toolbox' ),
+			    printf( _n( '1 Comment', '%1$s Comments', get_comments_number(), 'toolbox' ),
 			        number_format_i18n( get_comments_number() ), '<em>' . get_the_title() . '</em>' );
 			?>
 		</h2>
